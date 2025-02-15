@@ -24,7 +24,8 @@ resource "null_resource" "backend" {
     type = "ssh"
     user     = "ec2-user"
     password = "DevOps321"
-  }
+  }  
+
   provisioner "file" {
         source      = "backend.sh"
         destination = "/tmp/backend.sh"

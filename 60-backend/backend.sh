@@ -4,4 +4,4 @@ dnf install ansible -y
 #push
 #ansible-playbook -i inventory.ini main.yaml
 #pull
-ansible-pull -i localhsot, -U  https://github.com/yeguru/expense-ansible-roles-tf.git main.yaml -e COMPONENT=backend -e ENVIRONMENT=$1
+ansible-pull -i localhost, -U  https://github.com/yeguru/expense-ansible-roles-tf.git main.yaml -e COMPONENT=backend -e ENVIRONMENT=$1
