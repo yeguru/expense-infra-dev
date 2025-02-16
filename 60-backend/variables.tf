@@ -13,3 +13,6 @@ variable "common_tags" {
     }
     
 }
+variable "domain_name" {
+    default = "rajaws82s.shop"
+}
