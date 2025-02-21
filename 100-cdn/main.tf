@@ -47,18 +47,14 @@ resource "aws_cloudfront_distribution" "expense" {
 
   
   }
-
-  
   
   restrictions {
     geo_restriction {
       restriction_type = "whitelist"
-      
+      locations        = ["US", "CA", "GB", "DE","IN"]
     }
   }
-
   
-
   viewer_certificate {
     acm_certificate_arn = local.https_certificate_arn
     ssl_support_method = "sni-only"
@@ -82,8 +78,7 @@ resource "aws_route53_record" "cdn" {
     name                   = aws_cloudfront_distribution.expense.domain_name
     zone_id                = aws_cloudfront_distribution.expense.hosted_zone_id
     evaluate_target_health = false
-    
-    
+        
   }
   allow_overwrite = true
 }
